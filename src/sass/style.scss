@@ -1,0 +1,1644 @@
+/* author:tangxue */
+/* explain: Base on tangxue, HongBaojin add popover module */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei";
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+a {
+  text-decoration: none
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+  *margin-top: 0;
+}
+
+%one {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%two {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+%clearfix {
+  content: "";
+  display: block;
+  clear: both;
+  zoom: 1;
+}
+
+$browser-default-font-size: 75px !default;
+html {
+  font-size: $browser-default-font-size;
+}
+
+@function pr($px) {
+  @return $px / $browser-default-font-size * 1rem;
+}
+
+input[type=button], input[type=submit], input[type=text], input[type=file], button {
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+select {
+  background: url('https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//mt-tri.png') #fff;
+  background-size: pr(19px) pr(10px);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.aaa {
+  padding-top: pr(88px);
+}
+
+.box {
+  width: 100%;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.wap {
+  width: pr(750px);
+  margin: 0 auto;
+}
+
+.banner-form {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 340px;
+  height: 380px;
+  padding: 0 20px 20px;
+  background: #fff;
+  border-bottom: pr(20px) solid #F7F7F7;
+  h4 {
+    color: #1a3eac;
+    font-size: 25px;
+    line-height: 78px;
+    text-align: center;
+  }
+  form {
+    input {
+      width: 300px;
+      height: 44px;
+      line-height: 44px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      border-radius: 2px;
+      font-family: "Microsoft YaHei"
+    }
+    input[type="text"] {
+      color: #333;
+      text-indent: 15px;
+      border: solid 1px #dddddd;
+      background-color: #fafafa;
+      margin-bottom: 20px;
+    }
+    input[type="submit"] {
+      background-color: #1a3eac;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #999999;
+      font-size: 13px;
+      span {
+        color: #e9501f;
+      }
+    }
+  }
+  &.wap {
+    position: static;
+    height: pr(590px);
+    padding: 0 pr(30px) pr(30px);
+    width: pr(750px);
+    h4 {
+      font-size: pr(34px);
+      height: pr(130px);
+      line-height: pr(130px);
+      font-weight: bold;
+      span {
+        color: #333;
+      }
+    }
+    form {
+      input {
+        width: pr(690px);
+        height: pr(68px);
+        line-height: pr(68px);
+      }
+      input[type="text"] {
+        text-indent: pr(19px);
+        margin-bottom: pr(20px);
+      }
+      input[type="submit"] {
+        margin-bottom: pr(10px);
+      }
+      p {
+        font-size: pr(22px);
+      }
+    }
+  }
+}
+
+.header {
+  height: 100px;
+  background: #fff;
+  .header-left {
+    float: left;
+    margin-top: 11px;
+  }
+  .header-list {
+    float: left;
+    line-height: 100px;
+    margin-left: 20px;
+    a {
+      margin-right: 50px;
+      font-size: 16px;
+      color: #666666;
+      &:hover {
+        color: #1a3eac;
+      }
+    }
+  }
+  .header-tel {
+    float: right;
+    height: 56px;;
+    margin-top: 20px;
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//tel-bg.png) no-repeat;
+    padding-left: 100px;
+    .p1 {
+      background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//tel-icon.png) no-repeat left center;
+      font-size: 26px;
+      color: #1a3eac;
+      padding-left: 30px;
+    }
+    .p2 {
+      font-size: 14px;
+      color: #666666;
+    }
+  }
+  &.wap {
+    height: pr(88px);
+    padding: 0 pr(20px);
+    .header-left {
+      margin-top: pr(14px);
+      img {
+        width: pr(188px);
+        height: pr(59px);
+      }
+      .p2 {
+        display: inline-block;
+        font-size: pr(14px);
+        color: #666666;
+        margin-left: pr(10px);
+        margin-top: pr(6px);
+      }
+    }
+    .header-tel {
+      height: unset;
+      line-height: pr(88px);
+      background: none;
+      margin-top: 0;
+      padding-left: 0;
+      a {
+        font-size: pr(26px);
+        background-size: pr(24px) pr(23px);
+        padding-left: pr(30px);
+      }
+    }
+  }
+}
+
+.banner-box {
+  height: 450px;
+  position: relative;
+  .banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 450px;
+    z-index: 2;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 450px;
+    }
+    .banner-btn {
+      position: absolute;
+      left: 574px;
+      bottom: 55px;
+      height: 50px;
+      a {
+        display: block;;
+        width: 130px;
+        height: 50px;
+        float: left;
+        &.yytx {
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+  .banner {
+    position: relative;
+    height: 450px;
+  }
+  &.wap {
+    background: none;
+    height: pr(400px);
+    width: pr(750px);
+    padding: 0;
+    a {
+      display: block;
+      background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//banner1.png) no-repeat center;
+      background-size: pr(750px) pr(400px);
+      height: pr(400px);
+      width: pr(750px)
+    }
+  }
+}
+
+.choice-title {
+  font-size: pr(34px);
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  height: pr(130px);
+  line-height: pr(130px);
+  span {
+    color: #1a3eac;
+  }
+}
+
+.choice-container {
+  border-bottom: pr(20px) solid #F7F7F7;
+  overflow: hidden;
+  position: relative;
+  .swiper-pagination {
+    bottom: pr(20px);
+  }
+}
+
+.choice {
+  margin-top: 50px;
+  .pagination1 {
+  }
+  .choice-blue {
+    float: left;
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//choice-blue-bg.png) no-repeat;
+    width: 319px;
+    height: 252px;;
+    box-shadow: none;
+    padding-left: 40px;
+    padding-top: 35px;
+    .blue-left {
+      float: left;
+    }
+    .blue-right {
+      float: left;
+      margin-left: 15px;
+      h4 {
+        font-size: 29px;
+        color: #fff;
+      }
+      p {
+        font-size: 16px;
+        color: #fff;
+        margin-top: 10px;
+      }
+      a {
+        display: block;
+        width: 88px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        border-radius: 4px;
+        border: solid 1px #ffffff;
+        font-size: 14px;
+        color: #fff;
+        margin-top: 25px;
+      }
+    }
+  }
+  .choice-white {
+    position: relative;
+    float: left;
+    margin-right: 13px;
+    width: 285px;
+    height: 218px;
+    border-radius: 4px;
+    box-shadow: 0px 10px 20px 0px rgba(42, 58, 105, 0.1);
+    margin-top: 8px;
+    padding: 0 19px;
+    &.nomr {
+      margin-right: 0;
+    }
+    .title {
+      overflow: hidden;
+      padding-top: 20px;
+      .span1 {
+        position: relative;
+        float: left;
+        font-size: 18px;
+        color: #333;
+        padding-left: 20px;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 5px;
+          height: 17px;
+          background-color: #1a3eac;
+          top: 4px;
+          left: 0;
+        }
+      }
+      .span2 {
+        float: right;
+        font-size: 44px;
+        color: #1a3eac;
+        opacity: 0.1;
+        margin-top: -10px;
+      }
+    }
+    .text {
+      a {
+        display: block;
+        color: #666666;
+        font-size: 14px;
+        line-height: 1.6;
+        &:hover {
+          color: #1a3eac;
+          text-decoration: underline;
+        }
+      }
+    }
+    .white-btn {
+      position: absolute;
+      bottom: 0;
+      width: 245px;
+      height: 47px;
+      line-height: 47px;
+      border-top: solid 1px #eeeeee;
+      a {
+        font-size: 12px;
+        color: #1a3eac;
+      }
+    }
+  }
+  &.wap {
+    margin: 0 auto;
+    padding-bottom: pr(60px);
+    height: auto;
+    .choice-blue {
+      background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//choice-blue-bg1.png);
+      background-size: pr(704px) pr(384px);
+      width: pr(704px);
+      height: pr(384px);
+      padding-left: pr(40px);
+      padding-top: pr(30px);
+      .blue-right {
+        margin-left: 0;
+        position: relative;
+        h4 {
+          font-size: pr(28px);
+          font-weight: bold;
+          position: relative;
+          padding-left: pr(20px);
+          &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: pr(6px);
+            height: pr(26px);
+            background-color: #fff;
+            top: pr(6px);
+            left: 0;
+          }
+        }
+        p {
+          font-size: pr(26px);
+          margin-top: pr(10px);
+          line-height: 1.8;
+        }
+        a {
+          height: pr(40px);
+          line-height: pr(40px);
+          border-radius: 4px;
+          border: solid 1px #f7f7f7;
+          font-size: pr(20px);
+          padding: 0 pr(6px);
+          margin-top: pr(100px);
+        }
+      }
+    }
+    .choice-white {
+      margin-left: 0;
+      margin-right: 0;
+      background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//choice-blue-bg2.png);
+      background-size: pr(704px) pr(384px);
+      width: pr(704px);
+      height: pr(384px);
+      box-shadow: none;
+      margin-top: 0;
+      padding: 0 pr(40px);
+      .title {
+        padding-top: pr(20px);
+        .span1 {
+          font-size: pr(28px);
+          padding-left: pr(20px);
+          &::before {
+            width: pr(6px);
+            height: pr(26px);
+            top: pr(6px);
+            left: 0;
+          }
+        }
+        .span2 {
+          font-size: pr(60px);
+          margin-top: pr(-10px);
+        }
+      }
+      .text {
+        a {
+          font-size: pr(26px);
+        }
+      }
+      .white-btn {
+        width: pr(630px);
+        padding: 0 pr(20px);
+        height: unset;
+        line-height: unset;
+        bottom: pr(60px);
+        padding-top: pr(20px);
+        a {
+          font-size: pr(26px);
+        }
+      }
+    }
+  }
+}
+
+.quality-title {
+  margin-top: 70px;
+  text-align: center;
+  margin-bottom: 60px;
+  p {
+    position: relative;
+    display: inline-block;
+    font-size: 34px;
+    color: #333333;
+    padding: 0 50px;
+    span {
+      color: #1a3eac;
+    }
+    &::after, &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      display: block;
+      width: 26px;
+      height: 26px;
+      background-color: #1a3eac;
+      transform: rotate(45deg);
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+  &.wap {
+    height: pr(130px);
+    line-height: pr(130px);
+    margin-top: 0;
+    margin-bottom: 0;
+    p {
+      font-size: pr(34px);
+      font-weight: bold;
+      &::after, &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.quality-box {
+  padding-bottom: 80px;
+  &.white {
+    background: #fff;
+  }
+  &.gray {
+    background: #FAFAFA;
+    padding-top: 80px;
+  }
+  &.pdt {
+    padding-top: 80px;
+  }
+  .quality {
+    border: solid 1px #eeeeee;
+    background-color: #ffffff;
+    .quality-top {
+      background-color: #f8fbfe;
+      height: 48px;
+      position: relative;
+      .quality-left {
+        position: absolute;
+        left: 0;
+        span {
+          padding: 0 24px;
+          display: block;
+          float: left;
+          text-align: center;
+          line-height: 48px;
+        }
+        .span1 {
+          width: 120px;
+          font-size: 18px;
+          color: #1a3eac;
+          background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//dw-icon.png) no-repeat 12px center;
+          box-shadow: 1px 0px 0px 0px #eeeeee, -1px 0px 0px 0px #eeeeee, inset 0px 2px 0px 0px #1a3eac;
+          margin-top: -1px;
+          &.maxl {
+            padding-right: 14px;
+            text-align: right;
+          }
+        }
+        .span2 {
+          width: 160px;
+          font-size: 14px;
+          color: #666666;
+          text-align: left;
+        }
+      }
+      .quality-right {
+        position: absolute;
+        right: 0;
+        a {
+          display: block;
+          float: left;
+          width: 72px;
+          height: 28px;
+          line-height: 28px;;
+          background-color: #e21f68;
+          border-radius: 2px;
+          text-align: center;
+          font-size: 14px;
+          color: #fff;
+          margin-right: 10px;
+          margin-top: 10px;
+        }
+        .rxsq {
+          background-color: #1a3eac;
+        }
+      }
+    }
+    .quality-cont {
+      margin: 50px auto 0;
+      .quality-swiper {
+        width: 1100px;
+        padding-bottom: 30px;
+        .quality-div {
+          position: relative;
+          width: 420px !important;
+          height: 266px;
+          background-color: #ffffff;
+          box-shadow: 0px 10px 20px 0px rgba(42, 58, 105, 0.1);
+          border: solid 1px #eeeeee;
+          padding: 0 20px;
+          .hot-span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+            z-index: 1;
+          }
+          .quality-logo {
+            margin: 0 auto;
+          }
+          .quality-text {
+            padding-top: 24px;
+            border-top: solid 1px #eeeeee;
+            p {
+              font-size: 14px;
+              color: #333333;
+              line-height: 2;
+              span {
+                color: #666666;
+              }
+            }
+          }
+          .quality-btn {
+            margin-top: 20px;
+            a {
+              display: block;
+              width: 99%;
+              height: 44px;
+              line-height: 44px;
+              text-align: center;
+              font-size: 14px;
+              color: #fff;
+              background-color: #1a3eac;
+              border-radius: 2px;
+            }
+          }
+          &.actives {
+            background-color: rgba(51, 51, 51, 0.6);
+          }
+        }
+      }
+      .a-div {
+        position: absolute;
+        top: 12px;
+        right: 0;
+        width: 46px;
+        height: 262px;
+        line-height: 212px;
+        background: #fff;
+        z-index: 999;
+      }
+      .a-div1 {
+        left: 0;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        top: 45%;
+      }
+      .swiper-button-next {
+        right: 10px;
+      }
+      .swiper-button-prev {
+        left: 10px;
+      }
+    }
+    .quality-table {
+      .scroll-title {
+        overflow: hidden;
+        width: 100%;
+        height: 60px;
+        line-height: 66px;
+        p {
+          font-size: 18px;
+          width: 25%;
+          text-align: center;
+          color: #333;
+          font-weight: bold;
+          float: left;
+        }
+      }
+      .quality-scroll {
+        max-height: 601px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 20px;
+          height: 1px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #e5e5e5;
+        }
+        &::-webkit-scrollbar-track {
+          background: #fff;
+        }
+        table {
+          text-align: center;
+          width: 100%;
+          tbody {
+            tr {
+              th {
+                color: #333333;
+                font-size: 18px;
+              }
+              td {
+                width: 25%;
+                height: 120px;
+                border: solid 1px #eeeeee;
+                position: relative;
+                color: #333333;
+                font-size: 14px;
+                .hot-span {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 75px;
+                  height: 75px;
+                  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+                  z-index: 1;
+                }
+                .td-logo {
+                  text-align: center;
+                  margin: 0 auto;
+                  width: 240px;
+                  height: 67px;
+                  box-shadow: 0px 1px 0px 0px #eeeeee;
+                }
+                p {
+                  color: #333333;
+                  font-size: 14px;
+                  padding-top: 10px;
+                }
+                a {
+                  display: inline-block;
+                  width: 72px;
+                  height: 28px;
+                  line-height: 28px;
+                  border-radius: 2px;
+                  border: solid 1px #1a3eac;
+                  color: #1a3eac;
+                  font-size: 14px;
+                  text-align: center;
+                }
+              }
+              &:hover {
+                background: #F8FBFE;
+                td {
+                  &:first-child {
+                    border-left: 3px solid #1a3eac;
+                  }
+                }
+                p {
+                  color: #1a3eac;
+                }
+                a {
+                  background-color: #1a3eac;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.quality-wap {
+  &.active {
+    padding-top: pr(90px);
+  }
+  &.white {
+    background: #fff;
+    padding-bottom: pr(40px);
+    .quality {
+      .quality-table-box {
+
+        &::-webkit-scrollbar-thumb {
+          background-color: #e5e5e5;
+        }
+        &::-webkit-scrollbar-track {
+          background: #fff;
+        }
+      }
+    }
+  }
+  &.gray {
+    background: #F7F7F7;
+    padding: pr(40px) 0;
+    .quality {
+      .quality-table-box {
+        &::-webkit-scrollbar-thumb {
+          background-color: #eeeeee;
+        }
+        &::-webkit-scrollbar-track {
+          background: #F7F7F7;
+        }
+      }
+    }
+  }
+  &.pdt {
+    padding-top: pr(40px);
+  }
+  .swiper3 {
+    .swiper-button-next, .swiper-button-prev {
+      z-index: 100;
+      width: pr(42px);
+      height: pr(42px);
+      background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//arrow.png);
+      background-size: pr(42px) pr(42px);
+      position: absolute;
+      top: 50%;
+      margin-top: pr(-21px);
+      &.next3 {
+        right: 0;
+      }
+      &.prev3 {
+        transform: rotate(180deg);
+        left: 0;
+      }
+    }
+  }
+  .quality {
+    border: none;
+    .quality-top {
+      height: pr(54px);
+      background-color: #f8fbfe;
+      border: solid 1px #eeeeee;
+      margin: 0 pr(30px);
+      .quality-left {
+        float: left;
+        span {
+          font-size: pr(24px);
+          padding: 0 pr(30px);
+          display: block;
+          float: left;
+          text-align: center;
+          line-height: pr(54px);
+        }
+        .span1 {
+          width: pr(150px);
+          color: #1a3eab;
+          font-weight: bold;
+          background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//dw-icon.png) no-repeat pr(12px) center;
+          background-size: pr(14px) pr(18px);
+          background-color: #fdfdfd;
+          box-shadow: -1px 0px 0px 0px #eeeeee, 1px 0px 0px 0px #eeeeee, inset 0px 2px 0px 0px #1a3eac;
+          &.maxw {
+            width: pr(160px);
+          }
+        }
+        .span2 {
+          color: #666666;
+        }
+      }
+    }
+    .swiper3 {
+      width: pr(690px);
+    }
+    .quality-cont {
+      padding: pr(40px) pr(30px) 0;
+      width: pr(750px);
+      .quality-swiper {
+        padding: 0 0 pr(40px);
+        .quality-div {
+          position: relative;
+          width: pr(520px);
+          height: pr(382px);
+          box-shadow: 0px pr(15px) pr(30px) 0px rgba(51, 51, 51, 0.15);
+          border: solid 1px #eeeeee;
+          padding: 0 pr(20px);
+          background: #fff;
+          .hot-span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: pr(75px);
+            height: pr(75px);
+            background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+            background-size: pr(75px) pr(75px);
+            z-index: 1;
+          }
+        }
+        .quality-logo {
+          width: pr(360px);
+          height: pr(100px);
+          text-align: center;
+          margin: 0 auto;
+        }
+        .quality-text {
+          padding-top: pr(26px);
+          border-top: solid 1px #eeeeee;
+          p {
+            font-size: pr(22px);
+            color: #333333;
+            line-height: 2;
+            span {
+              color: #666666;
+            }
+          }
+        }
+        .quality-btn {
+          margin-top: pr(20px);
+          position: absolute;
+          bottom: pr(20px);
+          a {
+            display: block;
+            width: pr(460px);
+            height: pr(68px);
+            line-height: pr(68px);
+            color: #ffffff;
+            background-color: #1a3eac;
+            border-radius: 4px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .quality-right {
+      text-align: center;
+      &.mt3 {
+        margin-top: pr(20px);
+      }
+      a {
+        display: inline-block;
+        width: pr(340px);
+        height: pr(68px);
+        line-height: pr(64px);
+        background-color: #1a3eac;
+        border-radius: 4px;
+        text-align: center;
+        font-size: pr(26px);
+        color: #ffffff;
+        border: solid 2px #1a3eac;
+        &:last-child {
+          color: #1a3eac;
+          background: #fff;
+        }
+      }
+    }
+    .quality-table-box {
+      padding-left: pr(30px);
+      max-height: pr(960px);
+      overflow-y: auto;
+      margin-top: pr(40px);
+      &::-webkit-scrollbar {
+        width: pr(30px);
+        height: 1px;
+      }
+      .quality-table {
+        width: pr(690px);
+        border: solid 1px #eeeeee;
+        background-color: #ffffff;
+        margin-bottom: pr(20px);
+        .table-top {
+          padding: pr(20px);
+          text-align: center;
+          position: relative;
+          .hot-span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: pr(75px);
+            height: pr(75px);
+            background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+            z-index: 1;
+            background-size: pr(75px) pr(75px);
+          }
+          .table-logo {
+            text-align: center;
+            margin: 0 auto;
+            width: pr(240px);
+            height: pr(67px);
+            box-shadow: 0px 1px 0px 0px #eeeeee;
+          }
+          p {
+            color: #333333;
+            font-size: pr(24px);
+            padding-top: pr(16px);
+          }
+        }
+        .table-text {
+          border-top: solid 1px #eeeeee;
+          overflow: hidden;
+          height: auto;
+          .table-td {
+            float: left;
+            text-align: center;
+            padding: pr(14px) pr(10px) pr(10px);
+            height: 100%;
+            &:nth-child(1) {
+              width: pr(252px);
+            }
+            &:nth-child(2), &:nth-child(3) {
+              width: pr(214px);
+            }
+            &:nth-child(2) {
+              border-left: solid 1px #eeeeee;
+              border-right: solid 1px #eeeeee;
+            }
+            .p1 {
+              color: #333333;
+              font-size: pr(24px);
+              font-weight: bold;
+              margin-bottom: 6px;
+            }
+            .p2 {
+              color: #666666;
+              font-size: pr(20px);
+            }
+            .zxzx {
+              display: inline-block;
+              margin: 0 auto;
+              height: pr(34px);
+              line-height: pr(34px);
+              text-align: center;
+              font-size: pr(20px);
+              color: #fff;
+              background-color: #e21f68;
+              border-radius: 4px;
+              padding: 0 pr(10px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.tickets-box {
+  height: 542px;
+  width: 100%;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//bg5.png) no-repeat;
+  min-width: 1200px;
+  background-size: 1920px 542px;
+  background-position: center center;
+  .title {
+    padding-top: 100px;
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    span {
+      color: #1a3eac;
+    }
+  }
+  .tickets {
+    width: 1248px;
+    height: 308px;
+    margin-top: 40px;
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//form2.png);
+    position: relative;
+    h6 {
+      font-size: 22px;
+      color: #333;
+      position: absolute;
+      top: 34px;
+      left: 489px;
+    }
+    h5 {
+      font-size: 30px;
+      color: #333;
+      position: absolute;
+      left: 461px;
+      top: 90px;
+      span {
+        color: white;
+      }
+    }
+    h4 {
+      font-size: 26px;
+      color: #1a3eac;
+      position: absolute;
+      left: 480px;
+      top: 143px;
+      letter-spacing: 2px;
+    }
+    a {
+      text-decoration: underline;
+      color: #1a3eac;
+      font-size: 16px;
+      bottom: 70px;
+      left: 461px;
+      position: absolute;
+    }
+    form {
+      width: 326px;
+      position: absolute;
+      right: 54px;
+      top: 44px;
+      input {
+        display: block;
+        width: 100%;
+        height: 50px;
+        margin: 0 auto 19px;
+        border: none;
+        outline: none;
+        font-family: "Microsoft YaHei";
+        background: none;
+        &[type=text] {
+          text-indent: 15px;
+          font-size: 14px;
+        }
+        &[type=submit] {
+          color: white;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+#footer-div {
+  margin-top: 0;
+  background: #fff;
+  .links {
+    a {
+      &:hover {
+        color: #1a3eac;
+      }
+    }
+  }
+}
+
+.bottom-cleardiv {
+  height: 120px;
+  display: none;
+}
+
+.bottom-box {
+  display: none;
+  height: 120px;
+  position: fixed;
+  bottom: 0;
+  background: #1B40AF;
+  z-index: 23333;
+  .close {
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//close.png);
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 200;
+  }
+  .bottom {
+    height: 100%;
+    position: relative;
+    img {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    form {
+      position: relative;
+      top: 37px;
+      float: right;
+      input, a {
+        display: inline-block;
+        border-radius: 5px;
+        margin-left: 5px;
+      }
+      input[type=text] {
+        width: 210px;
+        height: 42px;
+        font-family: "Microsoft YaHei";
+        background: white;
+        border: none;
+        text-indent: 14px;
+        font-size: 14px;
+      }
+      input[type=submit] {
+        width: 170px;
+        height: 42px;
+        font-family: "Microsoft YaHei";
+        color: white;
+        border: 0;
+        background: #e21f68;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.right-fiexd {
+  width: 120px;
+  right: 20px;
+  top: 25%;
+  position: fixed;
+  z-index: 233;
+  background-image: linear-gradient(180deg, #4c77fa 0%, #1440c8 100%), linear-gradient(#fdae23, #fdae23);
+  background-blend-mode: normal, normal;
+  box-shadow: 0px 10px 20px 0px rgba(15, 41, 116, 0.2);
+  border-radius: 4px;
+  padding: 0 6px;
+  a {
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-size: 14px;
+    height: 48px;
+    border-bottom: 1px dashed #ffffff;
+    cursor: pointer;
+    &.zxzx {
+      background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//zxzx-icon.png) no-repeat 10px center;
+      padding-left: 20px;
+    }
+    &.backtop {
+      border: none;
+      background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//backtop.png) no-repeat top center;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+  }
+}
+
+.foter-form-img {
+  padding: 0 pr(30px) pr(40px);
+  position: relative;
+  .title {
+    color: #333;
+    font-size: pr(34px);
+    font-weight: bold;
+    text-align: center;
+    padding: pr(45px) 0;
+    span {
+      color: #1a3eac;
+    }
+    p {
+      font-size: pr(20px);
+      color: #666;
+      margin-top: pr(8px);
+      font-weight: normal;
+    }
+  }
+  .ban {
+    display: block;
+    width: pr(690px);
+  }
+  h3 {
+    margin-top: pr(30px);
+    width: pr(400px);
+    height: pr(48px);
+    font-size: pr(36px);
+    color: #333;
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cir.png) no-repeat;
+    background-size: pr(205px) pr(48px);
+    background-position: right center;
+    span {
+      color: white;
+    }
+  }
+  h4 {
+    font-size: pr(30px);
+    color: #333;
+    width: pr(394px);
+    height: pr(44px);
+    line-height: pr(42px);
+    text-align: center;
+    letter-spacing: pr(3px);
+    border: 1px solid #333;
+    border-radius: pr(15px) 0 pr(15px) 0;
+    margin-top: pr(10px);
+  }
+  h5 {
+    position: absolute;
+    font-size: pr(22px);
+    padding-left: pr(28px);
+    color: #666;
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//loc.png) no-repeat;
+    background-size: pr(16px) pr(22px);
+    background-position: left center;
+    right: pr(30px);
+    top: pr(567px);
+  }
+  a {
+    position: absolute;
+    font-size: pr(16px);
+    color: #1a3eac;
+    right: pr(30px);
+    top: pr(626px);
+  }
+}
+
+.foter-form-form {
+  width: pr(750px);
+  height: pr(460px);
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//form2-wap.png);
+  position: relative;
+  background-size: pr(750px) pr(460px);
+  background-position: center top;
+  h3 {
+    font-weight: bold;
+    color: #1a3eac;
+    font-size: pr(32px);
+    padding-top: pr(59px);
+    text-align: center;
+  }
+  p {
+    font-size: pr(24px);
+    color: #adc1ff;
+    text-align: center;
+    margin-bottom: pr(34px);
+  }
+  input {
+    display: block;
+    width: pr(690px);
+    height: pr(68px);
+    margin: 0 auto pr(20px);
+    border-radius: 4px;
+    font-size: pr(22px);
+    font-family: "Microsoft YaHei";
+    border: none;
+    background: none;
+    &[type=text] {
+      text-indent: pr(20px);
+    }
+    &[type=submit] {
+      color: white;
+      font-size: pr(26px);
+    }
+  }
+}
+
+.footer-wap {
+  text-align: center;
+  padding: pr(20px) 0;
+  margin-bottom: pr(124px);
+  color: #666666;
+  font-size: pr(22px);
+  line-height: 1.8;
+}
+
+.bottom-wap {
+  width: pr(750px);
+  left: 0;
+  right: 0;
+  background: #f7f7f7;
+  position: fixed;
+  height: pr(124px);
+  z-index: 23333;
+  bottom: 0;
+  .bow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      display: block;
+      width: pr(236px);
+      height: pr(88px);
+      text-indent: pr(77px);
+      color: white;
+      font-size: pr(30px);
+      line-height: pr(88px);
+      &.bo1 {
+        background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//f1.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      &.bo2 {
+        background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//f2.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      &.bo3 {
+        background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//f3.png) no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+}
+
+.tc-pc {
+  display: none;
+  width: 600px;
+  height: 406px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -300px;
+  margin-top: -203px;
+  z-index: 233333;
+  border: 1px solid #0b539e;
+  background: white;
+  padding: 0 20px;
+  img {
+    display: block;
+    margin: 25px auto 0;
+  }
+  .close {
+    width: 14px;
+    height: 14px;
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//close1.png);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  h3 {
+    color: #0b579c;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 22px;
+  }
+  .sw {
+    display: flex;
+    justify-content: space-around;
+    span {
+      display: block;
+      padding-left: 22px;
+      background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cor.png);
+      background-repeat: no-repeat;
+      background-size: 14px 14px;
+      background-position: left center;
+      cursor: pointer;
+      &.cur {
+        background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cur.png);
+      }
+    }
+  }
+  form {
+    margin-top: 15px;
+    input, a {
+      display: inline-block;
+      border-radius: 5px;
+      margin-bottom: 16px;
+    }
+    input[type=text] {
+      width: 270px;
+      height: 48px;
+      font-family: "Microsoft YaHei";
+      background: #f7f7f7;
+      border: 1px solid #eee;
+      text-indent: 14px;
+      &.user-tel {
+        width: 100%;
+      }
+      &.user-con {
+        margin-left: 13px;
+      }
+    }
+    input[type=submit] {
+      width: 100%;
+      height: 48px;
+      font-family: "Microsoft YaHei";
+      color: white;
+      border: 0;
+      background: #0b539e;
+    }
+  }
+}
+
+.tc-wap {
+  display: none;
+  width: pr(588px);
+  height: pr(590px);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: pr(-294px);
+  margin-top: pr(-295px);
+  z-index: 233333;
+  border: 1px solid #0b539e;
+  background: white;
+  padding: 0 pr(28px);
+  img {
+    display: block;
+    margin: pr(44px) auto 0;
+    width: pr(349px);
+    height: pr(88px);
+  }
+  .close {
+    width: pr(28px);
+    height: pr(28px);
+    background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//close1.png);
+    position: absolute;
+    right: pr(20px);
+    top: pr(20px);
+    cursor: pointer;
+    background-size: 100% 100%;
+  }
+  h3 {
+    color: #0b579c;
+    font-weight: bold;
+    font-size: pr(28px);
+    margin-bottom: pr(25px);
+    margin-top: pr(26px);
+  }
+  .sw {
+    display: flex;
+    justify-content: space-around;
+    span {
+      display: block;
+      padding-left: pr(30px);
+      background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cor.png);
+      background-repeat: no-repeat;
+      background-size: pr(20px) pr(20px);
+      background-position: left center;
+      cursor: pointer;
+      &.cur {
+        background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cur.png);
+      }
+    }
+  }
+  form {
+    margin-top: pr(20px);
+    input, a {
+      display: inline-block;
+      border-radius: 3px;
+      margin-bottom: pr(20px);
+      width: 100%;
+      height: pr(56px);
+      font-family: "Microsoft YaHei";
+      font-size: pr(20px);
+    }
+    input[type=text] {
+      background: #f7f7f7;
+      border: 1px solid #eee;
+      text-indent: pr(20px);
+    }
+    input[type=submit] {
+      color: white;
+      border: 0;
+      background: #0b539e;
+      font-size: pr(26px);
+    }
+  }
+}
+
+#mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 233332;
+  top: 0;
+  left: 0;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  background-color: #000;
+  overflow: hidden
+}
+
+.anchor-nav {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  height: pr(88px);
+  background: #FAFAFA;
+  padding: pr(20px);
+  padding-left: pr(40px);
+  border-bottom: 1px solid #DDDDDD;
+  &.active {
+    visibility: visible;
+  }
+  .nav-box {
+    .nav {
+      .nav-a {
+        width: unset !important;
+        span {
+          display: inline-block;
+          text-align: center;
+          font-size: pr(26px);
+          line-height: 1.6;;
+          color: #999;
+          padding-bottom: pr(4px);
+        }
+        &.active {
+          border-bottom: pr(3px) solid #0b539e;
+        }
+      }
+    }
+  }
+}
+
+.pdtd2, .pdtd3, .pdtd4, .pdtd5, .pdtd6, .pdtd7, .pdtd8 {
+  &.active {
+    padding-top: pr(88px);
+  }
+}

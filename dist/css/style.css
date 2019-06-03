@@ -1,0 +1,1840 @@
+/* author:tangxue */
+/* explain: Base on tangxue, HongBaojin add popover module */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+  *margin-top: 0;
+}
+
+html {
+  font-size: 75px;
+}
+
+input[type=button], input[type=submit], input[type=text], input[type=file], button {
+  cursor: pointer;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  -webkit-appearance: none;
+}
+
+select {
+  background: url("https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//mt-tri.png") #fff;
+  background-size: 0.25333rem 0.13333rem;
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.aaa {
+  padding-top: 1.17333rem;
+}
+
+.box {
+  width: 100%;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.wap {
+  width: 10rem;
+  margin: 0 auto;
+}
+
+.banner-form {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 340px;
+  height: 380px;
+  padding: 0 20px 20px;
+  background: #fff;
+  border-bottom: 0.26667rem solid #F7F7F7;
+}
+
+.banner-form h4 {
+  color: #1a3eac;
+  font-size: 25px;
+  line-height: 78px;
+  text-align: center;
+}
+
+.banner-form form input {
+  width: 300px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-family: "Microsoft YaHei";
+}
+
+.banner-form form input[type="text"] {
+  color: #333;
+  text-indent: 15px;
+  border: solid 1px #dddddd;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+
+.banner-form form input[type="submit"] {
+  background-color: #1a3eac;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.banner-form form p {
+  color: #999999;
+  font-size: 13px;
+}
+
+.banner-form form p span {
+  color: #e9501f;
+}
+
+.banner-form.wap {
+  position: static;
+  height: 7.86667rem;
+  padding: 0 0.4rem 0.4rem;
+  width: 10rem;
+}
+
+.banner-form.wap h4 {
+  font-size: 0.45333rem;
+  height: 1.73333rem;
+  line-height: 1.73333rem;
+  font-weight: bold;
+}
+
+.banner-form.wap h4 span {
+  color: #333;
+}
+
+.banner-form.wap form input {
+  width: 9.2rem;
+  height: 0.90667rem;
+  line-height: 0.90667rem;
+}
+
+.banner-form.wap form input[type="text"] {
+  text-indent: 0.25333rem;
+  margin-bottom: 0.26667rem;
+}
+
+.banner-form.wap form input[type="submit"] {
+  margin-bottom: 0.13333rem;
+}
+
+.banner-form.wap form p {
+  font-size: 0.29333rem;
+}
+
+.header {
+  height: 100px;
+  background: #fff;
+}
+
+.header .header-left {
+  float: left;
+  margin-top: 11px;
+}
+
+.header .header-list {
+  float: left;
+  line-height: 100px;
+  margin-left: 20px;
+}
+
+.header .header-list a {
+  margin-right: 50px;
+  font-size: 16px;
+  color: #666666;
+}
+
+.header .header-list a:hover {
+  color: #1a3eac;
+}
+
+.header .header-tel {
+  float: right;
+  height: 56px;
+  margin-top: 20px;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//tel-bg.png) no-repeat;
+  padding-left: 100px;
+}
+
+.header .header-tel .p1 {
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//tel-icon.png) no-repeat left center;
+  font-size: 26px;
+  color: #1a3eac;
+  padding-left: 30px;
+}
+
+.header .header-tel .p2 {
+  font-size: 14px;
+  color: #666666;
+}
+
+.header.wap {
+  height: 1.17333rem;
+  padding: 0 0.26667rem;
+}
+
+.header.wap .header-left {
+  margin-top: 0.18667rem;
+}
+
+.header.wap .header-left img {
+  width: 2.50667rem;
+  height: 0.78667rem;
+}
+
+.header.wap .header-left .p2 {
+  display: inline-block;
+  font-size: 0.18667rem;
+  color: #666666;
+  margin-left: 0.13333rem;
+  margin-top: 0.08rem;
+}
+
+.header.wap .header-tel {
+  height: unset;
+  line-height: 1.17333rem;
+  background: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.header.wap .header-tel a {
+  font-size: 0.34667rem;
+  background-size: 0.32rem 0.30667rem;
+  padding-left: 0.4rem;
+}
+
+.banner-box {
+  height: 450px;
+  position: relative;
+}
+
+.banner-box .banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 450px;
+  z-index: 2;
+}
+
+.banner-box .banner-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 450px;
+}
+
+.banner-box .banner-img .banner-btn {
+  position: absolute;
+  left: 574px;
+  bottom: 55px;
+  height: 50px;
+}
+
+.banner-box .banner-img .banner-btn a {
+  display: block;
+  width: 130px;
+  height: 50px;
+  float: left;
+}
+
+.banner-box .banner-img .banner-btn a.yytx {
+  margin-right: 14px;
+}
+
+.banner-box .banner {
+  position: relative;
+  height: 450px;
+}
+
+.banner-box.wap {
+  background: none;
+  height: 5.33333rem;
+  width: 10rem;
+  padding: 0;
+}
+
+.banner-box.wap a {
+  display: block;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//banner1.png) no-repeat center;
+  background-size: 10rem 5.33333rem;
+  height: 5.33333rem;
+  width: 10rem;
+}
+
+.choice-title {
+  font-size: 0.45333rem;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  height: 1.73333rem;
+  line-height: 1.73333rem;
+}
+
+.choice-title span {
+  color: #1a3eac;
+}
+
+.choice-container {
+  border-bottom: 0.26667rem solid #F7F7F7;
+  overflow: hidden;
+  position: relative;
+}
+
+.choice-container .swiper-pagination {
+  bottom: 0.26667rem;
+}
+
+.choice {
+  margin-top: 50px;
+}
+
+.choice .choice-blue {
+  float: left;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//choice-blue-bg.png) no-repeat;
+  width: 319px;
+  height: 252px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding-left: 40px;
+  padding-top: 35px;
+}
+
+.choice .choice-blue .blue-left {
+  float: left;
+}
+
+.choice .choice-blue .blue-right {
+  float: left;
+  margin-left: 15px;
+}
+
+.choice .choice-blue .blue-right h4 {
+  font-size: 29px;
+  color: #fff;
+}
+
+.choice .choice-blue .blue-right p {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.choice .choice-blue .blue-right a {
+  display: block;
+  width: 88px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 4px;
+  border: solid 1px #ffffff;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.choice .choice-white {
+  position: relative;
+  float: left;
+  margin-right: 13px;
+  width: 285px;
+  height: 218px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(42, 58, 105, 0.1);
+          box-shadow: 0px 10px 20px 0px rgba(42, 58, 105, 0.1);
+  margin-top: 8px;
+  padding: 0 19px;
+}
+
+.choice .choice-white.nomr {
+  margin-right: 0;
+}
+
+.choice .choice-white .title {
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.choice .choice-white .title .span1 {
+  position: relative;
+  float: left;
+  font-size: 18px;
+  color: #333;
+  padding-left: 20px;
+}
+
+.choice .choice-white .title .span1::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 17px;
+  background-color: #1a3eac;
+  top: 4px;
+  left: 0;
+}
+
+.choice .choice-white .title .span2 {
+  float: right;
+  font-size: 44px;
+  color: #1a3eac;
+  opacity: 0.1;
+  margin-top: -10px;
+}
+
+.choice .choice-white .text a {
+  display: block;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.choice .choice-white .text a:hover {
+  color: #1a3eac;
+  text-decoration: underline;
+}
+
+.choice .choice-white .white-btn {
+  position: absolute;
+  bottom: 0;
+  width: 245px;
+  height: 47px;
+  line-height: 47px;
+  border-top: solid 1px #eeeeee;
+}
+
+.choice .choice-white .white-btn a {
+  font-size: 12px;
+  color: #1a3eac;
+}
+
+.choice.wap {
+  margin: 0 auto;
+  padding-bottom: 0.8rem;
+  height: auto;
+}
+
+.choice.wap .choice-blue {
+  background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//choice-blue-bg1.png);
+  background-size: 9.38667rem 5.12rem;
+  width: 9.38667rem;
+  height: 5.12rem;
+  padding-left: 0.53333rem;
+  padding-top: 0.4rem;
+}
+
+.choice.wap .choice-blue .blue-right {
+  margin-left: 0;
+  position: relative;
+}
+
+.choice.wap .choice-blue .blue-right h4 {
+  font-size: 0.37333rem;
+  font-weight: bold;
+  position: relative;
+  padding-left: 0.26667rem;
+}
+
+.choice.wap .choice-blue .blue-right h4::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.08rem;
+  height: 0.34667rem;
+  background-color: #fff;
+  top: 0.08rem;
+  left: 0;
+}
+
+.choice.wap .choice-blue .blue-right p {
+  font-size: 0.34667rem;
+  margin-top: 0.13333rem;
+  line-height: 1.8;
+}
+
+.choice.wap .choice-blue .blue-right a {
+  height: 0.53333rem;
+  line-height: 0.53333rem;
+  border-radius: 4px;
+  border: solid 1px #f7f7f7;
+  font-size: 0.26667rem;
+  padding: 0 0.08rem;
+  margin-top: 1.33333rem;
+}
+
+.choice.wap .choice-white {
+  margin-left: 0;
+  margin-right: 0;
+  background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//choice-blue-bg2.png);
+  background-size: 9.38667rem 5.12rem;
+  width: 9.38667rem;
+  height: 5.12rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-top: 0;
+  padding: 0 0.53333rem;
+}
+
+.choice.wap .choice-white .title {
+  padding-top: 0.26667rem;
+}
+
+.choice.wap .choice-white .title .span1 {
+  font-size: 0.37333rem;
+  padding-left: 0.26667rem;
+}
+
+.choice.wap .choice-white .title .span1::before {
+  width: 0.08rem;
+  height: 0.34667rem;
+  top: 0.08rem;
+  left: 0;
+}
+
+.choice.wap .choice-white .title .span2 {
+  font-size: 0.8rem;
+  margin-top: -0.13333rem;
+}
+
+.choice.wap .choice-white .text a {
+  font-size: 0.34667rem;
+}
+
+.choice.wap .choice-white .white-btn {
+  width: 8.4rem;
+  padding: 0 0.26667rem;
+  height: unset;
+  line-height: unset;
+  bottom: 0.8rem;
+  padding-top: 0.26667rem;
+}
+
+.choice.wap .choice-white .white-btn a {
+  font-size: 0.34667rem;
+}
+
+.quality-title {
+  margin-top: 70px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.quality-title p {
+  position: relative;
+  display: inline-block;
+  font-size: 34px;
+  color: #333333;
+  padding: 0 50px;
+}
+
+.quality-title p span {
+  color: #1a3eac;
+}
+
+.quality-title p::after, .quality-title p::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: #1a3eac;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.quality-title p::before {
+  left: 0;
+}
+
+.quality-title p::after {
+  right: 0;
+}
+
+.quality-title.wap {
+  height: 1.73333rem;
+  line-height: 1.73333rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.quality-title.wap p {
+  font-size: 0.45333rem;
+  font-weight: bold;
+}
+
+.quality-title.wap p::after, .quality-title.wap p::before {
+  display: none;
+}
+
+.quality-box {
+  padding-bottom: 80px;
+}
+
+.quality-box.white {
+  background: #fff;
+}
+
+.quality-box.gray {
+  background: #FAFAFA;
+  padding-top: 80px;
+}
+
+.quality-box.pdt {
+  padding-top: 80px;
+}
+
+.quality-box .quality {
+  border: solid 1px #eeeeee;
+  background-color: #ffffff;
+}
+
+.quality-box .quality .quality-top {
+  background-color: #f8fbfe;
+  height: 48px;
+  position: relative;
+}
+
+.quality-box .quality .quality-top .quality-left {
+  position: absolute;
+  left: 0;
+}
+
+.quality-box .quality .quality-top .quality-left span {
+  padding: 0 24px;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 48px;
+}
+
+.quality-box .quality .quality-top .quality-left .span1 {
+  width: 120px;
+  font-size: 18px;
+  color: #1a3eac;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//dw-icon.png) no-repeat 12px center;
+  -webkit-box-shadow: 1px 0px 0px 0px #eeeeee, -1px 0px 0px 0px #eeeeee, inset 0px 2px 0px 0px #1a3eac;
+          box-shadow: 1px 0px 0px 0px #eeeeee, -1px 0px 0px 0px #eeeeee, inset 0px 2px 0px 0px #1a3eac;
+  margin-top: -1px;
+}
+
+.quality-box .quality .quality-top .quality-left .span1.maxl {
+  padding-right: 14px;
+  text-align: right;
+}
+
+.quality-box .quality .quality-top .quality-left .span2 {
+  width: 160px;
+  font-size: 14px;
+  color: #666666;
+  text-align: left;
+}
+
+.quality-box .quality .quality-top .quality-right {
+  position: absolute;
+  right: 0;
+}
+
+.quality-box .quality .quality-top .quality-right a {
+  display: block;
+  float: left;
+  width: 72px;
+  height: 28px;
+  line-height: 28px;
+  background-color: #e21f68;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.quality-box .quality .quality-top .quality-right .rxsq {
+  background-color: #1a3eac;
+}
+
+.quality-box .quality .quality-cont {
+  margin: 50px auto 0;
+}
+
+.quality-box .quality .quality-cont .quality-swiper {
+  width: 1100px;
+  padding-bottom: 30px;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div {
+  position: relative;
+  width: 420px !important;
+  height: 266px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(42, 58, 105, 0.1);
+          box-shadow: 0px 10px 20px 0px rgba(42, 58, 105, 0.1);
+  border: solid 1px #eeeeee;
+  padding: 0 20px;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .hot-span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+  z-index: 1;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .quality-logo {
+  margin: 0 auto;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .quality-text {
+  padding-top: 24px;
+  border-top: solid 1px #eeeeee;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .quality-text p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 2;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .quality-text p span {
+  color: #666666;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .quality-btn {
+  margin-top: 20px;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div .quality-btn a {
+  display: block;
+  width: 99%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1a3eac;
+  border-radius: 2px;
+}
+
+.quality-box .quality .quality-cont .quality-swiper .quality-div.actives {
+  background-color: rgba(51, 51, 51, 0.6);
+}
+
+.quality-box .quality .quality-cont .a-div {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 46px;
+  height: 262px;
+  line-height: 212px;
+  background: #fff;
+  z-index: 999;
+}
+
+.quality-box .quality .quality-cont .a-div1 {
+  left: 0;
+}
+
+.quality-box .quality .quality-cont .swiper-button-next, .quality-box .quality .quality-cont .swiper-button-prev {
+  top: 45%;
+}
+
+.quality-box .quality .quality-cont .swiper-button-next {
+  right: 10px;
+}
+
+.quality-box .quality .quality-cont .swiper-button-prev {
+  left: 10px;
+}
+
+.quality-box .quality .quality-table .scroll-title {
+  overflow: hidden;
+  width: 100%;
+  height: 60px;
+  line-height: 66px;
+}
+
+.quality-box .quality .quality-table .scroll-title p {
+  font-size: 18px;
+  width: 25%;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  float: left;
+}
+
+.quality-box .quality .quality-table .quality-scroll {
+  max-height: 601px;
+  overflow-y: auto;
+}
+
+.quality-box .quality .quality-table .quality-scroll::-webkit-scrollbar {
+  width: 20px;
+  height: 1px;
+}
+
+.quality-box .quality .quality-table .quality-scroll::-webkit-scrollbar-thumb {
+  background-color: #e5e5e5;
+}
+
+.quality-box .quality .quality-table .quality-scroll::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.quality-box .quality .quality-table .quality-scroll table {
+  text-align: center;
+  width: 100%;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr th {
+  color: #333333;
+  font-size: 18px;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr td {
+  width: 25%;
+  height: 120px;
+  border: solid 1px #eeeeee;
+  position: relative;
+  color: #333333;
+  font-size: 14px;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr td .hot-span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+  z-index: 1;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr td .td-logo {
+  text-align: center;
+  margin: 0 auto;
+  width: 240px;
+  height: 67px;
+  -webkit-box-shadow: 0px 1px 0px 0px #eeeeee;
+          box-shadow: 0px 1px 0px 0px #eeeeee;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr td p {
+  color: #333333;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr td a {
+  display: inline-block;
+  width: 72px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 2px;
+  border: solid 1px #1a3eac;
+  color: #1a3eac;
+  font-size: 14px;
+  text-align: center;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr:hover {
+  background: #F8FBFE;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr:hover td:first-child {
+  border-left: 3px solid #1a3eac;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr:hover p {
+  color: #1a3eac;
+}
+
+.quality-box .quality .quality-table .quality-scroll table tbody tr:hover a {
+  background-color: #1a3eac;
+  color: #fff;
+}
+
+.quality-wap.active {
+  padding-top: 1.2rem;
+}
+
+.quality-wap.white {
+  background: #fff;
+  padding-bottom: 0.53333rem;
+}
+
+.quality-wap.white .quality .quality-table-box::-webkit-scrollbar-thumb {
+  background-color: #e5e5e5;
+}
+
+.quality-wap.white .quality .quality-table-box::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.quality-wap.gray {
+  background: #F7F7F7;
+  padding: 0.53333rem 0;
+}
+
+.quality-wap.gray .quality .quality-table-box::-webkit-scrollbar-thumb {
+  background-color: #eeeeee;
+}
+
+.quality-wap.gray .quality .quality-table-box::-webkit-scrollbar-track {
+  background: #F7F7F7;
+}
+
+.quality-wap.pdt {
+  padding-top: 0.53333rem;
+}
+
+.quality-wap .swiper3 .swiper-button-next, .quality-wap .swiper3 .swiper-button-prev {
+  z-index: 100;
+  width: 0.56rem;
+  height: 0.56rem;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//arrow.png);
+  background-size: 0.56rem 0.56rem;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.28rem;
+}
+
+.quality-wap .swiper3 .swiper-button-next.next3, .quality-wap .swiper3 .swiper-button-prev.next3 {
+  right: 0;
+}
+
+.quality-wap .swiper3 .swiper-button-next.prev3, .quality-wap .swiper3 .swiper-button-prev.prev3 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  left: 0;
+}
+
+.quality-wap .quality {
+  border: none;
+}
+
+.quality-wap .quality .quality-top {
+  height: 0.72rem;
+  background-color: #f8fbfe;
+  border: solid 1px #eeeeee;
+  margin: 0 0.4rem;
+}
+
+.quality-wap .quality .quality-top .quality-left {
+  float: left;
+}
+
+.quality-wap .quality .quality-top .quality-left span {
+  font-size: 0.32rem;
+  padding: 0 0.4rem;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 0.72rem;
+}
+
+.quality-wap .quality .quality-top .quality-left .span1 {
+  width: 2rem;
+  color: #1a3eab;
+  font-weight: bold;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//dw-icon.png) no-repeat 0.16rem center;
+  background-size: 0.18667rem 0.24rem;
+  background-color: #fdfdfd;
+  -webkit-box-shadow: -1px 0px 0px 0px #eeeeee, 1px 0px 0px 0px #eeeeee, inset 0px 2px 0px 0px #1a3eac;
+          box-shadow: -1px 0px 0px 0px #eeeeee, 1px 0px 0px 0px #eeeeee, inset 0px 2px 0px 0px #1a3eac;
+}
+
+.quality-wap .quality .quality-top .quality-left .span1.maxw {
+  width: 2.13333rem;
+}
+
+.quality-wap .quality .quality-top .quality-left .span2 {
+  color: #666666;
+}
+
+.quality-wap .quality .swiper3 {
+  width: 9.2rem;
+}
+
+.quality-wap .quality .quality-cont {
+  padding: 0.53333rem 0.4rem 0;
+  width: 10rem;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper {
+  padding: 0 0 0.53333rem;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-div {
+  position: relative;
+  width: 6.93333rem;
+  height: 5.09333rem;
+  -webkit-box-shadow: 0px 0.2rem 0.4rem 0px rgba(51, 51, 51, 0.15);
+          box-shadow: 0px 0.2rem 0.4rem 0px rgba(51, 51, 51, 0.15);
+  border: solid 1px #eeeeee;
+  padding: 0 0.26667rem;
+  background: #fff;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-div .hot-span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+  background-size: 1rem 1rem;
+  z-index: 1;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-logo {
+  width: 4.8rem;
+  height: 1.33333rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-text {
+  padding-top: 0.34667rem;
+  border-top: solid 1px #eeeeee;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-text p {
+  font-size: 0.29333rem;
+  color: #333333;
+  line-height: 2;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-text p span {
+  color: #666666;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-btn {
+  margin-top: 0.26667rem;
+  position: absolute;
+  bottom: 0.26667rem;
+}
+
+.quality-wap .quality .quality-cont .quality-swiper .quality-btn a {
+  display: block;
+  width: 6.13333rem;
+  height: 0.90667rem;
+  line-height: 0.90667rem;
+  color: #ffffff;
+  background-color: #1a3eac;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.quality-wap .quality .quality-right {
+  text-align: center;
+}
+
+.quality-wap .quality .quality-right.mt3 {
+  margin-top: 0.26667rem;
+}
+
+.quality-wap .quality .quality-right a {
+  display: inline-block;
+  width: 4.53333rem;
+  height: 0.90667rem;
+  line-height: 0.85333rem;
+  background-color: #1a3eac;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.34667rem;
+  color: #ffffff;
+  border: solid 2px #1a3eac;
+}
+
+.quality-wap .quality .quality-right a:last-child {
+  color: #1a3eac;
+  background: #fff;
+}
+
+.quality-wap .quality .quality-table-box {
+  padding-left: 0.4rem;
+  max-height: 12.8rem;
+  overflow-y: auto;
+  margin-top: 0.53333rem;
+}
+
+.quality-wap .quality .quality-table-box::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 1px;
+}
+
+.quality-wap .quality .quality-table-box .quality-table {
+  width: 9.2rem;
+  border: solid 1px #eeeeee;
+  background-color: #ffffff;
+  margin-bottom: 0.26667rem;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-top {
+  padding: 0.26667rem;
+  text-align: center;
+  position: relative;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-top .hot-span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//hot.png) no-repeat;
+  z-index: 1;
+  background-size: 1rem 1rem;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-top .table-logo {
+  text-align: center;
+  margin: 0 auto;
+  width: 3.2rem;
+  height: 0.89333rem;
+  -webkit-box-shadow: 0px 1px 0px 0px #eeeeee;
+          box-shadow: 0px 1px 0px 0px #eeeeee;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-top p {
+  color: #333333;
+  font-size: 0.32rem;
+  padding-top: 0.21333rem;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text {
+  border-top: solid 1px #eeeeee;
+  overflow: hidden;
+  height: auto;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td {
+  float: left;
+  text-align: center;
+  padding: 0.18667rem 0.13333rem 0.13333rem;
+  height: 100%;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td:nth-child(1) {
+  width: 3.36rem;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td:nth-child(2), .quality-wap .quality .quality-table-box .quality-table .table-text .table-td:nth-child(3) {
+  width: 2.85333rem;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td:nth-child(2) {
+  border-left: solid 1px #eeeeee;
+  border-right: solid 1px #eeeeee;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td .p1 {
+  color: #333333;
+  font-size: 0.32rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td .p2 {
+  color: #666666;
+  font-size: 0.26667rem;
+}
+
+.quality-wap .quality .quality-table-box .quality-table .table-text .table-td .zxzx {
+  display: inline-block;
+  margin: 0 auto;
+  height: 0.45333rem;
+  line-height: 0.45333rem;
+  text-align: center;
+  font-size: 0.26667rem;
+  color: #fff;
+  background-color: #e21f68;
+  border-radius: 4px;
+  padding: 0 0.13333rem;
+}
+
+.tickets-box {
+  height: 542px;
+  width: 100%;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//bg5.png) no-repeat;
+  min-width: 1200px;
+  background-size: 1920px 542px;
+  background-position: center center;
+}
+
+.tickets-box .title {
+  padding-top: 100px;
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+}
+
+.tickets-box .title span {
+  color: #1a3eac;
+}
+
+.tickets-box .tickets {
+  width: 1248px;
+  height: 308px;
+  margin-top: 40px;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//form2.png);
+  position: relative;
+}
+
+.tickets-box .tickets h6 {
+  font-size: 22px;
+  color: #333;
+  position: absolute;
+  top: 34px;
+  left: 489px;
+}
+
+.tickets-box .tickets h5 {
+  font-size: 30px;
+  color: #333;
+  position: absolute;
+  left: 461px;
+  top: 90px;
+}
+
+.tickets-box .tickets h5 span {
+  color: white;
+}
+
+.tickets-box .tickets h4 {
+  font-size: 26px;
+  color: #1a3eac;
+  position: absolute;
+  left: 480px;
+  top: 143px;
+  letter-spacing: 2px;
+}
+
+.tickets-box .tickets a {
+  text-decoration: underline;
+  color: #1a3eac;
+  font-size: 16px;
+  bottom: 70px;
+  left: 461px;
+  position: absolute;
+}
+
+.tickets-box .tickets form {
+  width: 326px;
+  position: absolute;
+  right: 54px;
+  top: 44px;
+}
+
+.tickets-box .tickets form input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto 19px;
+  border: none;
+  outline: none;
+  font-family: "Microsoft YaHei";
+  background: none;
+}
+
+.tickets-box .tickets form input[type=text] {
+  text-indent: 15px;
+  font-size: 14px;
+}
+
+.tickets-box .tickets form input[type=submit] {
+  color: white;
+  font-size: 15px;
+}
+
+#footer-div {
+  margin-top: 0;
+  background: #fff;
+}
+
+#footer-div .links a:hover {
+  color: #1a3eac;
+}
+
+.bottom-cleardiv {
+  height: 120px;
+  display: none;
+}
+
+.bottom-box {
+  display: none;
+  height: 120px;
+  position: fixed;
+  bottom: 0;
+  background: #1B40AF;
+  z-index: 23333;
+}
+
+.bottom-box .close {
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//close.png);
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.bottom-box .bottom {
+  height: 100%;
+  position: relative;
+}
+
+.bottom-box .bottom img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.bottom-box .bottom form {
+  position: relative;
+  top: 37px;
+  float: right;
+}
+
+.bottom-box .bottom form input, .bottom-box .bottom form a {
+  display: inline-block;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.bottom-box .bottom form input[type=text] {
+  width: 210px;
+  height: 42px;
+  font-family: "Microsoft YaHei";
+  background: white;
+  border: none;
+  text-indent: 14px;
+  font-size: 14px;
+}
+
+.bottom-box .bottom form input[type=submit] {
+  width: 170px;
+  height: 42px;
+  font-family: "Microsoft YaHei";
+  color: white;
+  border: 0;
+  background: #e21f68;
+  font-size: 15px;
+}
+
+.right-fiexd {
+  width: 120px;
+  right: 20px;
+  top: 25%;
+  position: fixed;
+  z-index: 233;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4c77fa), to(#1440c8)), -webkit-gradient(linear, left top, left bottom, from(#fdae23), to(#fdae23));
+  background-image: linear-gradient(180deg, #4c77fa 0%, #1440c8 100%), linear-gradient(#fdae23, #fdae23);
+  background-blend-mode: normal, normal;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(15, 41, 116, 0.2);
+          box-shadow: 0px 10px 20px 0px rgba(15, 41, 116, 0.2);
+  border-radius: 4px;
+  padding: 0 6px;
+}
+
+.right-fiexd a {
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  font-size: 14px;
+  height: 48px;
+  border-bottom: 1px dashed #ffffff;
+  cursor: pointer;
+}
+
+.right-fiexd a.zxzx {
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//zxzx-icon.png) no-repeat 10px center;
+  padding-left: 20px;
+}
+
+.right-fiexd a.backtop {
+  border: none;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//backtop.png) no-repeat top center;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.foter-form-img {
+  padding: 0 0.4rem 0.53333rem;
+  position: relative;
+}
+
+.foter-form-img .title {
+  color: #333;
+  font-size: 0.45333rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.6rem 0;
+}
+
+.foter-form-img .title span {
+  color: #1a3eac;
+}
+
+.foter-form-img .title p {
+  font-size: 0.26667rem;
+  color: #666;
+  margin-top: 0.10667rem;
+  font-weight: normal;
+}
+
+.foter-form-img .ban {
+  display: block;
+  width: 9.2rem;
+}
+
+.foter-form-img h3 {
+  margin-top: 0.4rem;
+  width: 5.33333rem;
+  height: 0.64rem;
+  font-size: 0.48rem;
+  color: #333;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cir.png) no-repeat;
+  background-size: 2.73333rem 0.64rem;
+  background-position: right center;
+}
+
+.foter-form-img h3 span {
+  color: white;
+}
+
+.foter-form-img h4 {
+  font-size: 0.4rem;
+  color: #333;
+  width: 5.25333rem;
+  height: 0.58667rem;
+  line-height: 0.56rem;
+  text-align: center;
+  letter-spacing: 0.04rem;
+  border: 1px solid #333;
+  border-radius: 0.2rem 0 0.2rem 0;
+  margin-top: 0.13333rem;
+}
+
+.foter-form-img h5 {
+  position: absolute;
+  font-size: 0.29333rem;
+  padding-left: 0.37333rem;
+  color: #666;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//loc.png) no-repeat;
+  background-size: 0.21333rem 0.29333rem;
+  background-position: left center;
+  right: 0.4rem;
+  top: 7.56rem;
+}
+
+.foter-form-img a {
+  position: absolute;
+  font-size: 0.21333rem;
+  color: #1a3eac;
+  right: 0.4rem;
+  top: 8.34667rem;
+}
+
+.foter-form-form {
+  width: 10rem;
+  height: 6.13333rem;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//form2-wap.png);
+  position: relative;
+  background-size: 10rem 6.13333rem;
+  background-position: center top;
+}
+
+.foter-form-form h3 {
+  font-weight: bold;
+  color: #1a3eac;
+  font-size: 0.42667rem;
+  padding-top: 0.78667rem;
+  text-align: center;
+}
+
+.foter-form-form p {
+  font-size: 0.32rem;
+  color: #adc1ff;
+  text-align: center;
+  margin-bottom: 0.45333rem;
+}
+
+.foter-form-form input {
+  display: block;
+  width: 9.2rem;
+  height: 0.90667rem;
+  margin: 0 auto 0.26667rem;
+  border-radius: 4px;
+  font-size: 0.29333rem;
+  font-family: "Microsoft YaHei";
+  border: none;
+  background: none;
+}
+
+.foter-form-form input[type=text] {
+  text-indent: 0.26667rem;
+}
+
+.foter-form-form input[type=submit] {
+  color: white;
+  font-size: 0.34667rem;
+}
+
+.footer-wap {
+  text-align: center;
+  padding: 0.26667rem 0;
+  margin-bottom: 1.65333rem;
+  color: #666666;
+  font-size: 0.29333rem;
+  line-height: 1.8;
+}
+
+.bottom-wap {
+  width: 10rem;
+  left: 0;
+  right: 0;
+  background: #f7f7f7;
+  position: fixed;
+  height: 1.65333rem;
+  z-index: 23333;
+  bottom: 0;
+}
+
+.bottom-wap .bow {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bottom-wap .bow a {
+  display: block;
+  width: 3.14667rem;
+  height: 1.17333rem;
+  text-indent: 1.02667rem;
+  color: white;
+  font-size: 0.4rem;
+  line-height: 1.17333rem;
+}
+
+.bottom-wap .bow a.bo1 {
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//f1.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.bottom-wap .bow a.bo2 {
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//f2.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.bottom-wap .bow a.bo3 {
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//f3.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.tc-pc {
+  display: none;
+  width: 600px;
+  height: 406px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -300px;
+  margin-top: -203px;
+  z-index: 233333;
+  border: 1px solid #0b539e;
+  background: white;
+  padding: 0 20px;
+}
+
+.tc-pc img {
+  display: block;
+  margin: 25px auto 0;
+}
+
+.tc-pc .close {
+  width: 14px;
+  height: 14px;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//close1.png);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.tc-pc h3 {
+  color: #0b579c;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-top: 22px;
+}
+
+.tc-pc .sw {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.tc-pc .sw span {
+  display: block;
+  padding-left: 22px;
+  background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cor.png);
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: left center;
+  cursor: pointer;
+}
+
+.tc-pc .sw span.cur {
+  background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cur.png);
+}
+
+.tc-pc form {
+  margin-top: 15px;
+}
+
+.tc-pc form input, .tc-pc form a {
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+
+.tc-pc form input[type=text] {
+  width: 270px;
+  height: 48px;
+  font-family: "Microsoft YaHei";
+  background: #f7f7f7;
+  border: 1px solid #eee;
+  text-indent: 14px;
+}
+
+.tc-pc form input[type=text].user-tel {
+  width: 100%;
+}
+
+.tc-pc form input[type=text].user-con {
+  margin-left: 13px;
+}
+
+.tc-pc form input[type=submit] {
+  width: 100%;
+  height: 48px;
+  font-family: "Microsoft YaHei";
+  color: white;
+  border: 0;
+  background: #0b539e;
+}
+
+.tc-wap {
+  display: none;
+  width: 7.84rem;
+  height: 7.86667rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -3.92rem;
+  margin-top: -3.93333rem;
+  z-index: 233333;
+  border: 1px solid #0b539e;
+  background: white;
+  padding: 0 0.37333rem;
+}
+
+.tc-wap img {
+  display: block;
+  margin: 0.58667rem auto 0;
+  width: 4.65333rem;
+  height: 1.17333rem;
+}
+
+.tc-wap .close {
+  width: 0.37333rem;
+  height: 0.37333rem;
+  background: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//close1.png);
+  position: absolute;
+  right: 0.26667rem;
+  top: 0.26667rem;
+  cursor: pointer;
+  background-size: 100% 100%;
+}
+
+.tc-wap h3 {
+  color: #0b579c;
+  font-weight: bold;
+  font-size: 0.37333rem;
+  margin-bottom: 0.33333rem;
+  margin-top: 0.34667rem;
+}
+
+.tc-wap .sw {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.tc-wap .sw span {
+  display: block;
+  padding-left: 0.4rem;
+  background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cor.png);
+  background-repeat: no-repeat;
+  background-size: 0.26667rem 0.26667rem;
+  background-position: left center;
+  cursor: pointer;
+}
+
+.tc-wap .sw span.cur {
+  background-image: url(https://img.thea.cn/public/platform/thea/201902/tx/school-collect/images//cur.png);
+}
+
+.tc-wap form {
+  margin-top: 0.26667rem;
+}
+
+.tc-wap form input, .tc-wap form a {
+  display: inline-block;
+  border-radius: 3px;
+  margin-bottom: 0.26667rem;
+  width: 100%;
+  height: 0.74667rem;
+  font-family: "Microsoft YaHei";
+  font-size: 0.26667rem;
+}
+
+.tc-wap form input[type=text] {
+  background: #f7f7f7;
+  border: 1px solid #eee;
+  text-indent: 0.26667rem;
+}
+
+.tc-wap form input[type=submit] {
+  color: white;
+  border: 0;
+  background: #0b539e;
+  font-size: 0.34667rem;
+}
+
+#mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  z-index: 233332;
+  top: 0;
+  left: 0;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.anchor-nav {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  height: 1.17333rem;
+  background: #FAFAFA;
+  padding: 0.26667rem;
+  padding-left: 0.53333rem;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.anchor-nav.active {
+  visibility: visible;
+}
+
+.anchor-nav .nav-box .nav .nav-a {
+  width: unset !important;
+}
+
+.anchor-nav .nav-box .nav .nav-a span {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.34667rem;
+  line-height: 1.6;
+  color: #999;
+  padding-bottom: 0.05333rem;
+}
+
+.anchor-nav .nav-box .nav .nav-a.active {
+  border-bottom: 0.04rem solid #0b539e;
+}
+
+.pdtd2.active, .pdtd3.active, .pdtd4.active, .pdtd5.active, .pdtd6.active, .pdtd7.active, .pdtd8.active {
+  padding-top: 1.17333rem;
+}
